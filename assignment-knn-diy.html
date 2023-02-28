@@ -9,7 +9,7 @@
 <meta name="author" content="Robin de Pagter - Author">
 <meta name="author" content="Kevin Hoksbergen - Reviewer">
 
-<title>Assigment - kNN Diabetes</title>
+<title>Assigment - kNN DIY Diabetes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Assigment - kNN Diabetes</h1>
+<h1 class="title">Assigment - kNN DIY Diabetes</h1>
 </div>
 
 
@@ -138,6 +138,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
+<p><bold> All libraries and functions used in this project: </bold></p>
 <div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -146,13 +147,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix, ConfusionMatrixDisplay</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Choose a suitable dataset from <a href="https://github.com/HAN-M3DM-Data-Mining/assignments/tree/master/datasets">this</a> folder and train your own kNN model. Follow all the steps from the CRISP-DM model.</p>
-<section id="business-understanding--" class="level2">
-<h2 class="anchored" data-anchor-id="business-understanding--">Business Understanding -</h2>
-<p>The dataset that is used in this kNN model, is that of people above the age of 21 who have been tested for diabetes. Some of these people are diabetic and some were tested not to be diabetic. The goal of the machine learning model that will be built is to determine, with the available data, whether or not a person could possibly be diabetic. By simply testing certain parts of the person’s health, we could use the ML-model to quickly determine which person could have diabetes and who could not. This can than be used to further aid the person that has been tested.</p>
+<section id="business-understanding---diabetes-data" class="level2">
+<h2 class="anchored" data-anchor-id="business-understanding---diabetes-data">Business Understanding - Diabetes data</h2>
+<p>The dataset that is used in this kNN model, is that of people above the age of 21 who have been tested for diabetes. Some of these people are diabetic and some were tested not to be diabetic. The goal of the machine learning model that will be built is to determine, with the available data, whether or not a person could possibly be diabetic. By simply testing certain parts of the person’s health, we could use the ML-model to quickly determine which person could have diabetes and who could not. This can then be used to further aid the person that has been tested.</p>
 </section>
-<section id="data-understanding" class="level2">
-<h2 class="anchored" data-anchor-id="data-understanding">Data Understanding</h2>
+<section id="data-understanding---loading-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="data-understanding---loading-the-data">Data Understanding - Loading the data</h2>
 <p>The data used is that of the “National Institute of Diabetes and Digestive and Kidney Diseases” and has been made available for research purposes. The dataset includes certain values that are used to determine possible diabetes, like bloodpressure, insulin, and BMI. All data originates from atleast 21 year old females of Pima Indian Heritage</p>
 <p>The data is in the format of CSV for easy use, it will be imported from a github enviroment.</p>
 <p>To load the data into our script, the following code will be used:</p>
@@ -164,7 +164,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>RawData.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>&lt;class ‘pandas.core.frame.DataFrame’&gt; RangeIndex: 768 entries, 0 to 767 Data columns (total 9 columns): # Column Non-Null Count Dtype<br>
+<p>RangeIndex: 768 entries, 0 to 767 Data columns (total 9 columns): # Column Non-Null Count Dtype<br>
 — —— ————– —–<br>
 0 Pregnancies 768 non-null int64<br>
 1 Glucose 768 non-null int64<br>
@@ -175,17 +175,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 8 Outcome 768 non-null int64<br>
 dtypes: float64(2), int64(7) memory usage: 54.1 KB</p>
 </section>
-<section id="data-preparation" class="level2">
-<h2 class="anchored" data-anchor-id="data-preparation">Data Preparation</h2>
+<section id="data-preparation---transforming-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation---transforming-the-data">Data Preparation - Transforming the data</h2>
 <p>Super awesome test bro</p>
 </section>
-<section id="modeling" class="level2">
-<h2 class="anchored" data-anchor-id="modeling">Modeling</h2>
+<section id="modeling---machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="modeling---machine-learning">Modeling - Machine Learning</h2>
 <p>text and code here</p>
 </section>
 <section id="evaluation-and-deployment" class="level2">
 <h2 class="anchored" data-anchor-id="evaluation-and-deployment">Evaluation and Deployment</h2>
 <p>text and code here</p>
+</section>
+<section id="reviewer-notes" class="level2">
+<h2 class="anchored" data-anchor-id="reviewer-notes">Reviewer’ notes</h2>
 <p>reviewer adds suggestions for improving the model</p>
 </section>
 
