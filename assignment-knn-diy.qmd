@@ -1,8 +1,8 @@
 ---
-title: "Assigment - kNN DIY"
+title: "Assigment - kNN DIY Diabetes"
 author:
-  - name author here - Author
-  - name reviewer here - Reviewer
+  - Robin de Pagter - Author
+  - Kevin Hoksbergen - Reviewer
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
    html_notebook:
@@ -10,29 +10,46 @@ output:
     toc_depth: 2
 ---
 
-
-```{r}
-library(tidyverse)
-library(googlesheets4)
-library(class)
-library(caret)
+**All libraries and functions used in this project:**
+```{python}
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+import matplotlib.pyplot as plt
 ```
 
-Choose a suitable dataset from [this](https://github.com/HAN-M3DM-Data-Mining/assignments/tree/master/datasets) folder and train  your own kNN model. Follow all the steps from the CRISP-DM model.
 
-## Business Understanding
-text and code here
+## Business Understanding - Diabetes data
+The dataset that is used in this kNN model, is that of people above the age of 21 who have been tested for diabetes. Some of these people are diabetic and some were tested not to be diabetic. The goal of the machine learning model that will be built is to determine, with the available data, whether or not a person could possibly be diabetic. By simply testing certain parts of the person's health, we could use the ML-model to quickly determine which person could have diabetes and who could not. This can then be used to further aid the person that has been tested.
 
-## Data Understanding
-text and code here
+## Data Understanding - Loading the data
+The data used is that of the "National Institute of Diabetes and Digestive and Kidney Diseases" and has been made available for research purposes. The dataset includes certain values that are used to determine possible diabetes, like bloodpressure, insulin, and BMI. All data originates from atleast 21 year old females of Pima Indian Heritage
 
-## Data Preparation
-text and code here
+The data is in the format of CSV for easy use, it will be imported from a github enviroment.
 
-## Modeling
+To load the data into our script, the following code will be used:
+
+```{python}
+URL = "datasets\KNN-diabetes.csv"
+RawData = pd.read_csv(URL)
+```
+
+To preview the columns and their data types, the following line of code can be used:
+
+```{python}
+RawData.info()
+```
+
+## Data Preparation - Transforming the data
+Super awesome test bro
+
+## Modeling - Machine Learning
 text and code here
 
 ## Evaluation and Deployment
 text and code here
 
+## Reviewer' notes
 reviewer adds suggestions for improving the model
