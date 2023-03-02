@@ -89,6 +89,7 @@ X = prepData.loc[:, ~prepData.columns.isin(excluded)] #This will fetch the data 
 X = X.apply(normalize, axis=0) #This will drag the variable X through the normalize function
 
 #To view the results of our normalized data, we use the following code
+y = prepData['Outcome']
 X[['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']].describe()
 ```
 
