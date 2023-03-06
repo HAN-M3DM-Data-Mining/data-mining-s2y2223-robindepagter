@@ -109,12 +109,12 @@ According to the information in our Data Mining in Python workbook, KNN is an in
 
 KNN in pseudocode: 
 ```{python}
-for each instance in the test set:
-    for each instance in the training set:
-        calculate the distance between the two instances
-    sort the distances in ascending order
-    find the K nearest neighbors
-    predict the class based on the majority class among the K 
+# for each instance in the test set:
+#     for each instance in the training set:
+#         calculate the distance between the two instances
+#     sort the distances in ascending order
+#     find the K nearest neighbors
+#     predict the class based on the majority class among the K 
 ```
 
 We only need a few lines of code to train our model using the fit() function. This will train our model to be applied to the test data. It goes as follows:
