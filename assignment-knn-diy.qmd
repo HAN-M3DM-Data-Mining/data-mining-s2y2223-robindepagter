@@ -120,7 +120,7 @@ KNN in pseudocode:
 We only need a few lines of code to train our model using the fit() function. This will train our model to be applied to the test data. It goes as follows:
 
 ```{python}
-knn = KNeighborsClassifier(n_neighbors=10)
+knn = KNeighborsClassifier(n_neighbors=5)
 knn.fit(X_train, y_train)
 ```
 
