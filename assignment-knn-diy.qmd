@@ -155,5 +155,7 @@ roc_auc_score(y_test, y_pred)
 
 If we take a look at our earlier diffusion table, we can see that the model generated a lot of false negatives which could indicate that our model was not extremely accurate. The code however indicates that our model was about 76% accurate and 70% efficient.
 
+The many false negatives can be potentially dangerous, if a patient is told "Nothing to worry about, you don't have diabetes" and he/she in fact does have diabetes. It could be putting the patient at an unnecessary high risk
+
 ## Reviewer' notes
 reviewer adds suggestions for improving the model
